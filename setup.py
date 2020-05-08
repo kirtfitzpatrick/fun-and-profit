@@ -19,7 +19,7 @@ setuptools.setup(
     packages=setuptools.find_packages(where="fun_and_profit"),
 
     install_requires=[
-        "aws-cdk.core==1.36.0",
+        "aws-cdk.core~=1.36.0",
     ],
 
     python_requires=">=3.6",
