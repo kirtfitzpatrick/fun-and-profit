@@ -1,0 +1,37 @@
+#!/bin/bash
+
+function reload-direnv {
+  direnv allow && direnv reload
+}
+
+# Command line autocompleters
+complete -C '/usr/local/bin/aws_completer' aws
+
+
+# Setup Python environment
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+export PATH="/usr/local/Cellar/pyenv-virtualenv/1.1.5/shims:${PATH}"
+export PYENV_VIRTUALENV_INIT=1
+
+_pyenv_virtualenv_hook()
+{
+  local ret=$? 
+  if [ -n "$VIRTUAL_ENV" ]; then 
+    eval "$(pyenv sh-activate --quiet || pyenv sh-deactivate --quiet || true)" || true 
+  else 
+    eval "$(pyenv sh-activate --quiet || true)" || true 
+  fi 
+  return $ret 
+}; 
+
+if ! [[ "$PROMPT_COMMAND" =~ _pyenv_virtualenv_hook ]]; then 
+  PROMPT_COMMAND="_pyenv_virtualenv_hook;$PROMPT_COMMAND"; 
+fi
+
+
+# Setup direnv for directory environment variables
+eval "$(direnv hook bash)"
+

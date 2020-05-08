@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Environment config loaded and unloaded as you cd into and out of this directory.
+# Make sure to add the helpful contents of dot_profile to your ~/.profile, ~/.bashrc
+# or whatever shell config file you use.
+export AWS_ACCESS_KEY_ID=""
+export AWS_SECRET_ACCESS_KEY=""
+export AWS_DEFAULT_REGION=""
+export AWS_REGION=""
+export AWS_ACCOUNT=""
+
+
+# source .env/bin/activate
+layout_python3
