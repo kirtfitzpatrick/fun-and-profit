@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Rename this to .envrc in the same folder and fill in the exports below
+# with your real credentials.
+#
 # Environment config loaded and unloaded as you cd into and out of this directory.
 # Make sure to add the helpful contents of dot_profile to your ~/.profile, ~/.bashrc
 # or whatever shell config file you use.

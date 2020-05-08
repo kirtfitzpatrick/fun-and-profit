@@ -1,12 +1,14 @@
 #!/bin/bash
 
-function reload-direnv {
-  direnv allow && direnv reload
-}
+# Copy the contents of this to your shell config file of choice (eg. ~/.profile, 
+# ~/.bashrc, etc). In addition to the usual aws-cdk dependencies, this app relies
+# on credentials exported to the shell environment. We use direnv for that here
+# but you can use whatever you want as long as it sets environment variables.
+
+
 
 # Command line autocompleters
 complete -C '/usr/local/bin/aws_completer' aws
-
 
 # Setup Python environment
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -34,4 +36,9 @@ fi
 
 # Setup direnv for directory environment variables
 eval "$(direnv hook bash)"
+
+# A helpful alias when you're modifying .envrc often
+function reload-direnv {
+  direnv allow && direnv reload
+}
 
