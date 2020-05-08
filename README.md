@@ -1,3 +1,8 @@
+# Fun & Profit
+
+AWS Cloud Development Kit app for creating Cloud Formation stacks to 
+build the Fun and Profit pipeline. It's just an excuse for me to 
+play around with CDK and python.
 
 To manually create a virtualenv on MacOS and Linux:
 
