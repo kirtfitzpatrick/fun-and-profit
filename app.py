@@ -8,8 +8,10 @@ from fun_and_profit.network_stack import NetworkStack
 from fun_and_profit.tweet_ingest_stack import TweetIngestStack
 
 
-aws_env = core.Environment(region=os.getenv("AWS_REGION"),
-                       account=os.getenv("AWS_ACCOUNT"))
+aws_env = core.Environment(
+    region=os.getenv("AWS_REGION"),
+    account=os.getenv("AWS_ACCOUNT")
+)
 
 app = core.App()
 
