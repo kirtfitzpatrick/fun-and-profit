@@ -12,10 +12,19 @@ class RegistryStack(FunAndProfitStack):
         super().__init__(scope, id, **kwargs)
 
         cloud_trail = aws_cloudtrail.Trail(self, "Trail")
-        self.registry = aws_ecr.Repository(
-            self, "Repository",
+
+        self.hello_docker_repo = aws_ecr.Repository(
+            self, "HelloDocker",
+            repository_name="hello-docker",
+            lifecycle_rules=[aws_ecr.LifecycleRule(max_image_count=10)],
+            removal_policy=core.RemovalPolicy.DESTROY
+        )
+        self.hello_docker_repo.on_cloud_trail_image_pushed("ImagePushed")
+
+        self.tweet_ingest_repo = aws_ecr.Repository(
+            self, "TweetIngest",
             repository_name="tweet-ingest",
             lifecycle_rules=[aws_ecr.LifecycleRule(max_image_count=10)],
             removal_policy=core.RemovalPolicy.DESTROY
         )
-        self.registry.on_cloud_trail_image_pushed("ImagePushed")
+        self.tweet_ingest_repo.on_cloud_trail_image_pushed("ImagePushed")

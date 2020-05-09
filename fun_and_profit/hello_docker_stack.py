@@ -1,6 +1,5 @@
 from aws_cdk import (
     core,
-    aws_cloudtrail,
     aws_ec2,
     aws_ecr,
     aws_ecs
@@ -8,7 +7,7 @@ from aws_cdk import (
 from fun_and_profit.fun_and_profit import FunAndProfitStack
 
 
-class TweetIngestStack(FunAndProfitStack):
+class HelloDockerStack(FunAndProfitStack):
 
     def __init__(self, scope: core.Construct, id: str, 
             ecs: aws_ecs.Cluster,
@@ -18,7 +17,7 @@ class TweetIngestStack(FunAndProfitStack):
 
         self.task_definition = aws_ecs.Ec2TaskDefinition(self, "TaskDef")
         self.task_definition.add_container(
-            "tweet-ingest",
+            "hello-docker",
             image=aws_ecs.ContainerImage.from_ecr_repository(registry),
             memory_limit_mib=128
         )

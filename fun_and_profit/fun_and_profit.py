@@ -5,11 +5,11 @@ import types
 class Namespace():
 
     @staticmethod
-    def create(scope: core.Construct, namespace: str, id: str) -> core.Construct:
-        id        = Namespace._format_name(id)
-        namespace = Namespace._format_name(namespace)
-        construct = core.Construct(scope, id)
-        core.Tag.add(construct, key=namespace, value=id)
+    def create(scope: core.Construct, level_name: str, id: str) -> core.Construct:
+        id         = Namespace._format_name(id)
+        level_name = Namespace._format_name(level_name)
+        construct  = core.Construct(scope, id)
+        core.Tag.add(construct, key=level_name, value=id)
 
         return construct
 
@@ -22,7 +22,7 @@ class FunAndProfitStack(core.Stack):
 
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
-        self._stack_name = self.simple_name
+        # self._stack_name = self.simple_name
         core.Tag.add(self, key="Name", value=self.simple_name)
 
     @property
