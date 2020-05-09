@@ -1,6 +1,7 @@
 -e .
 wheel
 pytest
+aws_cdk.core
 aws_cdk.aws_cloudformation
 aws_cdk.aws_cloudtrail
 aws_cdk.aws_ec2
