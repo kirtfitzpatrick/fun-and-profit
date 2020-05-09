@@ -21,9 +21,9 @@ class TweetIngestStack(FunAndProfitStack):
             vpc=vpc
         )
         self.ecs.add_capacity(
-            "DefaultAutoScalingGroupCapacity",
+            "Capacity",
             instance_type=aws_ec2.InstanceType("t2.micro"),
-            desired_capacity=1
+            desired_capacity=2
         )
 
         self.task_definition = aws_ecs.Ec2TaskDefinition(self, "TaskDef")
