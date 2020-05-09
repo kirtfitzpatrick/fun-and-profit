@@ -37,8 +37,8 @@ tweet_ingest_stack.add_dependency(registry_stack)
 # --------------------------------------------------------------------------------
 print("")
 print(f"fnp_org.node.unique_id:        {fnp_org.node.unique_id}")
-print(f"fnp_env.node.unique_id:        {fnp_env.node.unique_id}")
 print(f"registry_stack.node.unique_id: {registry_stack.node.unique_id}")
+print(f"fnp_env.node.unique_id:        {fnp_env.node.unique_id}")
 print(f"network_stack.node.unique_id:  {network_stack.node.unique_id}")
 print("")
 # --------------------------------------------------------------------------------
