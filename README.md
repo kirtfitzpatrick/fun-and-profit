@@ -51,7 +51,7 @@ $ cdk metadata FnpDevHelloDocker434A33B3
     data: ServiceD69D759B
 ```
 
-### Using direnv To Configure The Bash Env For Local Development
+### Using direnv To Configure Local Development
 
 Add your config stuff to .envrc and away you go.
 With any luck this codebase will be a 12 factor app. ;-)
