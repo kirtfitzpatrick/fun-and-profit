@@ -7,8 +7,7 @@ play around with CDK and python.
 
 ### Autocomplete
 
-Typing is for suckers. 👇
-<https://gist.github.com/kirtfitzpatrick/e7a7828e99bae609955f08b35fc2c8b1>
+Typing is for suckers. 👉 <https://gist.github.com/kirtfitzpatrick/e7a7828e99bae609955f08b35fc2c8b1>
 
 ```bash
 $ cdk 
