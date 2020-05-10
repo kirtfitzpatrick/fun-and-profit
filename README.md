@@ -21,6 +21,8 @@ $ cdk metadata FnpDevHelloDocker434A33B3
 
 ### Trying To Scope Stacks With Constructs
 
+That hash appended to everything except the base node of the tree is KILLING ME!
+
 ```bash
 $ cdk metadata FnpDevHelloDocker434A33B3 
 /Fnp/Dev/HelloDocker:
@@ -51,6 +53,8 @@ $ cdk metadata FnpDevHelloDocker434A33B3
 
 ### Using direnv to Configure The Command Line Environment
 
+Add your config stuff to .envrc and away you go.
+
 ```bash
 cat dot_profile >> ~/.profile
 . !$
@@ -58,5 +62,3 @@ cp dot_envrc .envrc
 vim !$
 reload-direnv
 ```
-
-Add your config stuff to .envrc and away you go.
