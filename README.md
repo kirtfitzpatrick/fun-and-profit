@@ -8,20 +8,15 @@ play around with CDK and python.
 ### Autocomplete
 
 [Typing is for suckers.](https://gist.github.com/kirtfitzpatrick/e7a7828e99bae609955f08b35fc2c8b1)
-```
-function _cdk_completer {
-  STACK_CMDS="list synthesize bootstrap deploy destroy diff metadata init context docs doctor"
 
-  if [ "$3" == "cdk" ]; then
-    COMPREPLY=($(compgen -W "$STACK_CMDS" $2))
-  elif [[ -d "cdk.out" ]] && ! [[ "$2" == "-"* ]]; then
-    TEMPLATES=$(ls -1 cdk.out/*.template.json | awk '{split($0,t,/\/|\./); print t[3]}')
-    COMPREPLY=($(compgen -W "$TEMPLATES" $2))
-  else
-    COMPREPLY=()
-  fi
-}
-complete -F _cdk_completer cdk
+```bash
+$ cdk 
+bootstrap   context     deploy      destroy     diff        docs        doctor      init        list        metadata    synthesize  
+$ cdk metadata Fnp
+FnpDevHelloDocker434A33B3  FnpDevNetwork67514EC7      FnpDevPublicEcs45E75100    FnpDevTweetIngestC12A26E5  FnpRegistryB3019273        
+$ cdk metadata FnpDev
+FnpDevHelloDocker434A33B3  FnpDevNetwork67514EC7      FnpDevPublicEcs45E75100    FnpDevTweetIngestC12A26E5  
+$ cdk metadata FnpDevHelloDocker434A33B3
 ```
 
 ### Trying To Scope Stacks With Constructs
