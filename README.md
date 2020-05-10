@@ -54,6 +54,7 @@ $ cdk metadata FnpDevHelloDocker434A33B3
 ### Using direnv to Configure The Command Line Environment
 
 Add your config stuff to .envrc and away you go.
+With any luck this codebase will be a 12 factor app. ;-)
 
 ```bash
 cat dot_profile >> ~/.profile
