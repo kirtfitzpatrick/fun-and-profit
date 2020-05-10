@@ -10,7 +10,7 @@ aws_env = core.Environment(
     account=os.getenv("AWS_ACCOUNT")
 )
 
-app = core.App()
+app = core.App(stack_traces=False)
 
 # Namespace the org and environment with some generic constructs
 fnp_org = fnp.Namespace.create(app, "Org", os.getenv("FNP_ORG"))

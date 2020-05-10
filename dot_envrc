@@ -11,7 +11,8 @@ export AWS_SECRET_ACCESS_KEY=""
 export AWS_DEFAULT_REGION=""
 export AWS_REGION=""
 export AWS_ACCOUNT=""
+export FNP_ORG="fnp"
+export FNP_ENV="dev"
 
 
-# source .env/bin/activate
-layout_python3
+source .env/bin/activate
