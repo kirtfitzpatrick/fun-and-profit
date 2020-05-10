@@ -24,7 +24,7 @@ $ cdk metadata FnpDevHelloDocker434A33B3
 That hash appended to everything except the base node of the tree is KILLING ME!
 
 ```bash
-$ cdk metadata FnpDevHelloDocker434A33B3 
+$ cdk metadata FnpDevHelloDocker434A33B3
 /Fnp/Dev/HelloDocker:
   - type: aws:cdk:stack-tags
     data:
@@ -32,8 +32,6 @@ $ cdk metadata FnpDevHelloDocker434A33B3
         value: Fnp
       - key: Env
         value: Dev
-      - key: Name
-        value: FnpDevHelloDocker
 /Fnp/Dev/HelloDocker/TaskDef/TaskRole/Resource:
   - type: aws:cdk:logicalId
     data: TaskDefTaskRole1EDB4A67
