@@ -51,7 +51,7 @@ $ cdk metadata FnpDevHelloDocker434A33B3
     data: ServiceD69D759B
 ```
 
-### Using direnv to Configure The Command Line Environment
+### Using direnv to configure the CLI environment for local development
 
 Add your config stuff to .envrc and away you go.
 With any luck this codebase will be a 12 factor app. ;-)
