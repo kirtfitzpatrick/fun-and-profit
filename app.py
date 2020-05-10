@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
 
-import os
 from aws_cdk import core
 import fun_and_profit as fnp
 
 
+# Force some decent error messages
+fnp.getenv("AWS_ACCESS_KEY_ID")
+fnp.getenv("AWS_SECRET_ACCESS_KEY")
+
 aws_env = core.Environment(
-    region=os.getenv("AWS_REGION"),
-    account=os.getenv("AWS_ACCOUNT")
+    region=fnp.getenv("AWS_REGION"),
+    account=fnp.getenv("AWS_ACCOUNT")
 )
 
 app = core.App(stack_traces=False)
 
 # Namespace the org and environment with some generic constructs
-fnp_org = fnp.Namespace.create(app, "Org", os.getenv("FNP_ORG"))
-fnp_env = fnp.Namespace.create(fnp_org, "Env", os.getenv("FNP_ENV"))
+fnp_org = fnp.Namespace(app, fnp.getenv("FNP_ORG"), "Org")
+fnp_env = fnp.Namespace(fnp_org, fnp.getenv("FNP_ENV"), "Env")
 
 # Org wide stacks first
 registry_stack = fnp.RegistryStack(fnp_org, "Registry")

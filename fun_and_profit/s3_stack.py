@@ -3,10 +3,10 @@ from aws_cdk import (
     aws_s3,
     aws_iam
 )
-from fun_and_profit.fun_and_profit import FunAndProfitStack
+import fun_and_profit as fnp
 
 
-class S3Stack(FunAndProfitStack):
+class S3Stack(fnp.FunAndProfitStack):
 
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)

@@ -4,10 +4,10 @@ from aws_cdk import (
     aws_ecr,
     aws_ecs
 )
-from fun_and_profit.fun_and_profit import FunAndProfitStack
+import fun_and_profit as fnp
 
 
-class HelloDockerStack(FunAndProfitStack):
+class HelloDockerStack(fnp.FunAndProfitStack):
 
     def __init__(self, scope: core.Construct, id: str, 
             ecs: aws_ecs.Cluster,

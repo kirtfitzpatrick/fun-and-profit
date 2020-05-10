@@ -3,10 +3,10 @@ from aws_cdk import (
     aws_cloudtrail,
     aws_ecr
 )
-from fun_and_profit.fun_and_profit import FunAndProfitStack
+import fun_and_profit as fnp
 
 
-class RegistryStack(FunAndProfitStack):
+class RegistryStack(fnp.FunAndProfitStack):
 
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)

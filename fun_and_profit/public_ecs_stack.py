@@ -3,10 +3,10 @@ from aws_cdk import (
     aws_ec2,
     aws_ecs
 )
-from fun_and_profit.fun_and_profit import FunAndProfitStack
+import fun_and_profit as fnp
 
 
-class PublicEcsStack(FunAndProfitStack):
+class PublicEcsStack(fnp.FunAndProfitStack):
 
     def __init__(self, scope: core.Construct, id: str, 
             vpc: aws_ec2.Vpc,

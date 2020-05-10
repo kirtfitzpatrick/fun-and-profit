@@ -8,11 +8,9 @@
 # or whatever shell config file you use.
 export AWS_ACCESS_KEY_ID=""
 export AWS_SECRET_ACCESS_KEY=""
-export AWS_DEFAULT_REGION=""
-export AWS_REGION=""
 export AWS_ACCOUNT=""
+export AWS_REGION=""
 export FNP_ORG="fnp"
 export FNP_ENV="dev"
 
-
-source .env/bin/activate
+source .activate_venv

@@ -2,10 +2,10 @@ from aws_cdk import (
     core,
     aws_ec2
 )
-from fun_and_profit.fun_and_profit import FunAndProfitStack
+import fun_and_profit as fnp
 
 
-class NetworkStack(FunAndProfitStack):
+class NetworkStack(fnp.FunAndProfitStack):
 
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)

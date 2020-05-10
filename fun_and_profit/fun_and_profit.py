@@ -1,20 +1,27 @@
 from aws_cdk import core
-import types
+import os
 
 
-class Namespace():
+def getenv(key: str, default=None):
+    value = os.getenv(key, default)
 
-    @staticmethod
-    def create(scope: core.Construct, level_name: str, id: str) -> core.Construct:
-        id         = Namespace._format_name(id)
-        level_name = Namespace._format_name(level_name)
-        construct  = core.Construct(scope, id)
-        core.Tag.add(construct, key=level_name, value=id)
+    if value == None:
+        raise KeyError(f"Environment config {key} is not set.")
+    elif value == "":
+        raise ValueError(f"Environment config {key} is blank.")
+    else:
+        return value
 
-        return construct
 
-    @staticmethod
-    def _format_name(name: str):
+class Namespace(core.Construct):
+
+    def __init__(self, scope: core.Construct, id: str, level_name: str) -> None:
+        id = self._format_name(id)
+        super().__init__(scope, id)
+        level_name = self._format_name(level_name)
+        core.Tag.add(self, key=level_name, value=id)
+
+    def _format_name(self, name: str):
         return "".join(list(map(lambda c: c.capitalize(), name.split("_"))))
 
 
@@ -22,8 +29,8 @@ class FunAndProfitStack(core.Stack):
 
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
-        # self._stack_name = self.simple_name
-        core.Tag.add(self, key="Name", value=self.simple_name)
+        # default_child = self.node.default_child
+        # default_child.override_logical_id(self.simple_name)
 
     @property
     def simple_name(self) -> str:
