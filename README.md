@@ -1,7 +1,7 @@
 # Fun & Profit
 
 AWS Cloud Development Kit app. It's just an excuse for me to 
-play around with CDK and python.
+play around with CDK and Python.
 
 ## Current Experiments
 
